@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #fff;
+    list-style: none;
+}
+
+@font-face {
+    font-family: "plain light";
+    src: url("./fonts/plain-light-webfont.woff") format("woff");
+    font-weight: lighter;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "plain regular";
+    src: url("./fonts/plain-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "silk serif light";
+    src: url("./fonts/silkserif-lightitalic-webfont.woff") format("woff");
+    font-weight: lighter;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "silk serif regular";
+    src: url("./fonts/silkserif-regularitalic-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #151515;
+}
+
+#loader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #0b0b0b;
+    z-index: 99;
+    padding: 25vh 10vw;
+}
+
+.line {
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.loader-counter {
+    margin-right: 1.2vw;
+    font-family: "silk serif regular";
+    font-size: 2.5vw;
+}
+
+.loader-count:first-child {
+    width: 80px;
+    display: inline-block;
+    text-align: right;
+}
+
+.line h1 {
+    font-family: "plain regular";
+    font-size: 6.5vw;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+#main {
+    position: relative;
+}
+
+#page1 {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #212A37;
+}
+
+.now {
+    font-size: 5vw;
+    animation-name: text;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes text {
+    0% {
+        font-family: "plain light";
+        -webkit-text-stroke: 0.1px #fff;
+        color: #fff;
+        opacity: 0;
+    }
+
+    48% {
+        font-family: "plain light";
+        -webkit-text-stroke: 0.1px #fff;
+        color: #fff;
+        opacity: 1;
+    }
+
+    50% {
+        font-family: "silk serif regular";
+        -webkit-text-stroke: 0.1px #fff;
+        color: transparent;
+        opacity: 0;
+    }
+
+    100% {
+        font-family: "silk serif regular";
+        -webkit-text-stroke: 0.1px #fff;
+        color: transparent;
+        opacity: 1;
+    }
+}
