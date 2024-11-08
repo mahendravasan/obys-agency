@@ -153,6 +153,17 @@ nav {
     overflow: hidden;
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.hero-text:nth-child(2):before {
+    content: "01";
+    position: absolute;
+    left: -12%;
+    top: 0;
+    font-size: 3vw;
+    font-family: "silk serif regular";
+    font-weight: 200;
 }
 
 .hero-text h1,
@@ -238,7 +249,7 @@ nav {
     width: 100%;
     min-height: 100vh;
     background-color: #101720;
-    padding-top: 7vh;
+    padding: 7vh 0;
 }
 
 #page4 .content {
@@ -252,6 +263,17 @@ nav {
     font-size: 6.5vw;
     text-transform: uppercase;
     font-weight: 800;
+    position: relative;
+}
+
+#page4 .content h1:before {
+    content: "03";
+    position: absolute;
+    left: -12%;
+    top: 0;
+    font-size: 3vw;
+    font-family: "silk serif regular";
+    font-weight: 200;
 }
 
 #page4 .content>p {
@@ -321,7 +343,93 @@ nav {
     width: 100%;
     min-height: 100vh;
     /* background-color: #101720; */
-    background-color: #0b0b0b;
+    background-color: #101720;
+    position: relative;
+}
+
+.marquee-text,
+.marquee-text2 {
+    white-space: nowrap;
+    overflow-x: hidden;
+    margin-bottom: -2.5vw;
+}
+
+.marquee-text h1,
+.marquee-text2 h1 {
+    font-family: "plain regular";
+    font-size: 6.5vw;
+    text-transform: uppercase;
+    font-weight: 500;
+    -webkit-text-stroke: 0.8px #fff;
+    color: transparent;
+    display: inline-block;
+    margin-right: 16px;
+    /* animation: marquee 10s linear infinite; */
+    animation-name: marquee;
+    animation-duration: 18s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.marquee-text2 h1 {
+    transform: translateX(calc(-100% - 20px));
+    animation-direction: reverse;
+}
+
+.marquee-text h1 span,
+.marquee-text2 h1 span {
+    font-family: "silk serif regular";
+    color: transparent;
+}
+
+.footer {
+    background-color: #101720;
+    padding: 5vh 0;
+}
+
+.footer .content {
+    width: 70%;
+    margin-left: 25%;
+    margin-right: 5%;
+}
+
+.footer .content h1 {
+    font-family: "plain regular";
+    font-size: 6.5vw;
+    text-transform: uppercase;
+    font-weight: 800;
+    position: relative;
+}
+
+.footer .content h1:before {
+    content: "04";
+    position: absolute;
+    left: -12%;
+    top: 0;
+    font-size: 3vw;
+    font-family: "silk serif regular";
+    font-weight: 200;
+}
+
+.footer-links {
+    /* padding: 3vw; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2vw;
+}
+
+.footer-links h5 {
+    font-family: "plain light";
+    font-size: 1vw;
+    margin-bottom: 3vh;
+}
+
+.footer-links ul li a,
+.footer-links .box a,
+.footer-links .box p {
+    font-family: "plain light";
+    font-size: 1.5vw;
+    margin-bottom: 1vh;
 }
 
 @keyframes text {
@@ -351,5 +459,15 @@ nav {
         -webkit-text-stroke: 0.1px #fff;
         color: transparent;
         opacity: 1;
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% - 20px));
     }
 }

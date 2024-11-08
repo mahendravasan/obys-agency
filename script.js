@@ -52,7 +52,7 @@ function cursorAnimation() {
     })
   })
 
-  Shery.makeMagnet(".nav-menu li, .logo", {
+  Shery.makeMagnet(".nav-menu li, .logo, .footer-links ul li", {
     // ease: "cubic-bezier(0.23, 1, 0.320, 1)",
     // duration: 0.5
   })
