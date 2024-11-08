@@ -44,7 +44,6 @@ function loadingAnimation() {
 
 function cursorAnimation() {
   document.addEventListener("mousemove", (e) => {
-    var cursor = document.querySelector(".cursor")
     console.log("mousemove", e.x, e.y)
     gsap.to(".cursor", {
       x: e.x,
