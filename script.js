@@ -58,7 +58,7 @@ function loadingAnimation() {
     // opacity: 0,
     duration: 1.5,
     delay: 3,
-    y: "-100%",
+    y: "-102%",
     ease: "power4.inOut"
     // display: "none"
   })
@@ -105,6 +105,49 @@ function cursorAnimation() {
     // ease: "cubic-bezier(0.23, 1, 0.320, 1)",
     // duration: 0.5
   })
+  var videoContainer = document.querySelector(".video-main")
+  var video = document.querySelector(".video-main video")
+  videoContainer.addEventListener("mouseenter", () => {
+    videoContainer.addEventListener("mousemove", (e) => {
+      gsap.to(".mousefollower", {
+        opacity: 0
+      })
+      gsap.to(".video-cursor", {
+        x: e.x - 1700,
+        y: e.y - 250
+      })
+    })
+  })
+  videoContainer.addEventListener("mouseleave", () => {
+    gsap.to(".mousefollower", {
+      opacity: 1
+    })
+    gsap.to(".video-cursor", {
+      x: "-50%", // 80% of window width
+      y: "-10%"
+    })
+  })
+
+  var flag = 0
+  videoContainer.addEventListener("click", () => {
+    if (flag == 0) {
+      document.querySelector(".video-cursor").innerHTML = "<i class='ri-pause-fill'></i>"
+      gsap.to(".video-cursor", {
+        scale: 0.5
+      })
+      video.play()
+      video.style.opacity = 1
+      flag = 1
+    } else {
+      document.querySelector(".video-cursor").innerHTML = "<i class='ri-play-fill'></i>"
+      gsap.to(".video-cursor", {
+        scale: 1
+      })
+      video.pause()
+      video.style.opacity = 0
+      flag = 0
+    }
+  })
 }
 
 function sheryAnimation() {
@@ -146,10 +189,25 @@ function sheryAnimation() {
   })
 }
 
+function scrollAnimation() {
+  document.querySelectorAll(".underline").forEach((underline) => {
+    gsap.from(underline, {
+      width: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: underline,
+        scroller: "#main",
+        // markers: true,
+        start: "top 100%",
+        end: "top 60%",
+        scrub: 3
+      }
+    })
+  })
+}
+
 locoScrollAnimation()
-
 loadingAnimation()
-
 cursorAnimation()
-
 sheryAnimation()
+scrollAnimation()
