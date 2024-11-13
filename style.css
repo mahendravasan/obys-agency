@@ -209,8 +209,8 @@ nav {
     height: 66vh;
     position: relative;
     margin-left: auto;
-    background-color: red;
-    background-image: url("https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg");
+    /* background-color: red; */
+    background-image: url("./images/video-thumbnail.png");
     background-size: cover;
     background-position: center;
 }
@@ -254,7 +254,7 @@ nav {
 #page3 {
     width: 100%;
     min-height: 100vh;
-    margin-bottom: 20vh;
+    /* margin-bottom: 20vh; */
     padding: 10vh 3vw;
     position: relative;
     /* background-color: #101720; */
@@ -427,6 +427,7 @@ nav {
 #page4 .img-main {
     width: 35vw;
     height: auto;
+    overflow: hidden;
 }
 
 #page4 .img-main img {
@@ -443,7 +444,8 @@ nav {
     line-height: 1.5;
 }
 
-.underline {
+.underline,
+#underline {
     width: 100%;
     height: 1px;
     background-color: #ffffffe1;
@@ -476,11 +478,11 @@ nav {
 
 #page5 {
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     /* background-color: #101720; */
     background-color: #101720;
     position: relative;
-    margin-top: 3vw;
+    /* margin-top: 3vw; */
 }
 
 .marquee-text,
@@ -527,6 +529,49 @@ nav {
     width: 70%;
     margin-left: 25%;
     margin-right: 5%;
+    position: relative;
+}
+
+
+#footer-title2 {
+    font-family: "silk serif regular";
+    text-transform: uppercase;
+    font-weight: 500;
+    position: absolute;
+    top: -1vw;
+    left: 0;
+    pointer-events: none;
+}
+
+#footer-title1 {
+    position: relative;
+}
+
+#footer-title1 span {
+    position: relative;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+#footer-title2 span {
+    position: relative;
+    z-index: 0;
+    opacity: 0;
+    -webkit-text-stroke: 0.8px #fff;
+    color: transparent;
+    transition: opacity 0.3s ease;
+}
+
+#footer-title2::before {
+    content: unset;
+}
+
+.footer .arrow {
+    width: 6vw;
+    height: auto;
+    position: absolute;
+    top: 2vw;
+    right: 18vw;
 }
 
 .footer .content h1 {
@@ -535,6 +580,7 @@ nav {
     text-transform: uppercase;
     font-weight: 800;
     position: relative;
+    width: max-content;
 }
 
 .footer .content h1:before {

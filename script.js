@@ -54,13 +54,15 @@ function loadingAnimation() {
       }, 35)
     }
   })
-  tl.to("#loader", {
-    // opacity: 0,
-    duration: 1.5,
+  tl.to("#loader .line", {
+    opacity: 0,
     delay: 3,
+    duration: 1.5
+  })
+  tl.to("#loader", {
+    duration: 1.5,
     y: "-102%",
     ease: "power4.inOut"
-    // display: "none"
   })
   // tl.from("#page1", {
   //   y: "100%",
@@ -178,7 +180,7 @@ function sheryAnimation() {
       geoVertex: { range: [1, 64], value: 1 },
       noEffectGooey: { value: true },
       onMouse: { value: 1 },
-      noise_speed: { value: 0.38, range: [0, 10] },
+      noise_speed: { value: 0.75, range: [0, 10] },
       metaball: { value: 0.49, range: [0, 2] },
       discard_threshold: { value: 0.5, range: [0, 1] },
       antialias_threshold: { value: 0, range: [0, 0.1] },
@@ -189,7 +191,7 @@ function sheryAnimation() {
   })
 }
 
-function scrollAnimation() {
+function fillUnderlineAnimation() {
   document.querySelectorAll(".underline").forEach((underline) => {
     gsap.from(underline, {
       width: 0,
@@ -206,8 +208,69 @@ function scrollAnimation() {
   })
 }
 
+function textAnimation() {
+  var titleText1 = document.querySelector("#footer-title1").textContent.trim()
+  var titleText2 = document.querySelector("#footer-title2").textContent.trim()
+
+  var clutteredText1 = ""
+  var clutteredText2 = ""
+
+  titleText1.split("").forEach((char) => {
+    clutteredText1 += `<span class='letter'>${char === " " ? "&nbsp;" : char}</span>`
+  })
+
+  titleText2.split("").forEach((char) => {
+    clutteredText2 += `<span class='letter'>${char === " " ? "&nbsp;" : char}</span>`
+  })
+
+  document.querySelector("#footer-title1").innerHTML = clutteredText1
+  document.querySelector("#footer-title2").innerHTML = clutteredText2
+
+  document.querySelector("#footer-title1").addEventListener("mouseenter", () => {
+    gsap.to("#footer-title1 .letter", {
+      opacity: 0,
+      stagger: 0.05,
+      duration: 0.3,
+      zIndex: 0
+    })
+    gsap.to("#footer-title2 .letter", {
+      opacity: 1,
+      delay: 0.2,
+      stagger: 0.05,
+      duration: 0.3,
+      zIndex: 1
+    })
+    gsap.to(".footer .arrow", {
+      x: 50,
+      delay: 1,
+      duration: 0.3
+    })
+  })
+  document.querySelector("#footer-title1").addEventListener("mouseleave", () => {
+    gsap.to("#footer-title1 .letter", {
+      opacity: 1,
+      delay: 0.2,
+      stagger: 0.05,
+      duration: 0.3,
+      zIndex: 1
+    })
+    gsap.to("#footer-title2 .letter", {
+      opacity: 0,
+      stagger: 0.05,
+      duration: 0.3,
+      zIndex: 0
+    })
+    gsap.to(".footer .arrow", {
+      x: 0,
+      delay: 1,
+      duration: 0.3
+    })
+  })
+}
+
 locoScrollAnimation()
 loadingAnimation()
 cursorAnimation()
 sheryAnimation()
-scrollAnimation()
+fillUnderlineAnimation()
+textAnimation()
