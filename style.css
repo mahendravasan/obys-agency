@@ -658,3 +658,235 @@ nav {
         transform: translateX(calc(-100% - 20px));
     }
 }
+
+@media (max-width: 600px) {
+    #loader {
+        padding: 0;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 5vh;
+        z-index: 9999999;
+    }
+
+    .loader-counter {
+        margin-right: 3vw;
+        font-family: "silk serif regular";
+        font-size: 5vw;
+    }
+
+    .loader-count:first-child {
+        width: 80px;
+        display: inline-block;
+        text-align: right;
+    }
+
+    .line h1 {
+        font-family: "plain regular";
+        font-size: 8vw;
+        line-height: 12vw;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+
+    nav a {
+        margin-left: auto;
+        margin-right: 2vw;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    #page1 {
+        min-height: 50vh;
+        padding-top: 1px;
+    }
+
+    .hero-text {
+        width: 90%;
+    }
+
+    .hero-text h1,
+    .hero-text h2 {
+        font-size: 10vw;
+        line-height: 12vw;
+    }
+
+    .hero-text:nth-child(2) {
+        margin-top: 16vh;
+    }
+
+    #hero-text1::before {
+        left: 6%;
+        top: 22%;
+        font-size: 6vw;
+    }
+
+    #page2 {
+        padding-top: 5vw;
+        min-height: 50vh;
+    }
+
+    .video-main {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .video-cursor {
+        width: 26vw;
+        height: 26vw;
+        font-size: 5vw;
+        top: 50%;
+        left: 50%;
+    }
+
+    #page3 {
+        padding: 10vh 0 0;
+    }
+
+    #page3 .content {
+        width: 100%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #page3 .content h1 {
+        font-size: 10vw;
+    }
+
+    #page3 .content h1:before {
+        left: 0;
+        top: -10vw;
+        font-size: 6vw;
+    }
+
+    .underline,
+    #underline {
+        margin-left: 0;
+        width: 92vw;
+    }
+
+    .img-container {
+        flex-direction: column;
+        gap: 10vw;
+    }
+
+    .img-item {
+        width: 70%;
+        height: 50vh;
+        margin: auto;
+    }
+
+    .circle-lg {
+        display: none;
+    }
+
+    #page4 .content {
+        width: 100%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #page4 .content h1 {
+        font-size: 10vw;
+    }
+
+    #page4 .content h1:before {
+        left: 0;
+        top: -10vw;
+        font-size: 6vw;
+    }
+
+    #page4 .content>p {
+        font-size: 4.5vw;
+        width: 90vw;
+        margin-bottom: 3vh;
+    }
+
+    #page4 .img-content {
+        flex-direction: column-reverse;
+    }
+
+    #page4 .content .text-content p {
+        font-size: 4.5vw;
+        width: 92vw;
+        font-family: "plain light";
+    }
+
+    #page4 .img-main {
+        width: 92vw;
+    }
+
+    .awwwards {
+        width: 92vw;
+        margin-top: -10vw;
+        margin-left: 0;
+    }
+
+    .awwwards-block-row {
+        padding: 8vw 0;
+    }
+
+    .awwwards-block-row .title,
+    .awwwards-block-row .description {
+        font-size: 4vw;
+    }
+
+    #page5 {
+        min-height: 40vh;
+    }
+
+    .marquee-text h1,
+    .marquee-text2 h1 {
+        font-size: 10vw;
+    }
+
+    .footer .content {
+        width: 100%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .footer .content h1 {
+        font-size: 10vw;
+    }
+
+    .footer .content h1:before {
+        left: 0;
+        top: -10vw;
+        font-size: 6vw;
+    }
+
+    .footer .arrow {
+        width: 10vw;
+        top: 3vw;
+        right: 20vw;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links h5 {
+        font-size: 5vw;
+        margin-bottom: 1.5vh;
+        margin-top: 3vw;
+    }
+
+    .footer-links ul li a,
+    .footer-links .box a,
+    .footer-links .box p {
+        font-size: 3.5vw;
+        margin-bottom: 3vh;
+    }
+}
